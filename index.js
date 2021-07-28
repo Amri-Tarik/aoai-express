@@ -4,15 +4,18 @@ var cors = require('cors')
 const port = 3000;
 const ID = "admin"
 
+var corsOptions = {
+  origin: 'https://int-aoai.netlify.app'
+}
+
 app.use(express.json())
-app.use(cors())
+app.use(cors(corsOptions))
 
 let questions = [
-			{question : "wach baghi tkoun micanician f 7yatek kamla f la graisse ou lwskh ou tkrfiss ?", answer : ["ah","ma validitch meca"] },
-			{question : "mn nytk ?", answer : ["ah","ma validitch meca","ma3ert baghi ha lflous"] },
-			{question : "wayli ?", answer : ["ah","ma validitch meca","td pls"] },
-			{question : "ma mty9ch ?", answer : ["ah","validit meca"] },
-			{question : "wach formatiti pc b 50 dh ?", answer : ["smiti baalla","non"] }
+			{question : "first question ?", answer : ["first answer","second answer"] },
+			{question : "Second question ?", answer : ["first answer","second answer","third answer"] },
+			{question : "third question ?", answer : ["first answer","second answer","third answer"] },
+			{question : "fourth question ?", answer : ["first answer","second answer"] }
 		]
 
 app.post("/auth", (req, res) => {
